@@ -1,14 +1,18 @@
-
 import { Link } from 'react-router-dom'
-
+import { useRecoilValue } from 'recoil'
+import { stLogin } from '../components/StAtom';
 
 export default function MainNav() {
+    const isLogin = useRecoilValue(stLogin);
+    const handleLogout =()=>{
+
+    }
     return (
         <div>
             <nav className="flex items-center justify-between flex-wrap bg-slate-50 p-6">
                 
                 <div className="flex items-center flex-shrink-0 text-white mr-6">
-                    <svg className="fill-black h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" /></svg>
+                    <svg className="fill-black h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="" /></svg>
                     <span className="font-semibold text-xl tracking-tight text-black">K5-React-review</span>
                 </div>
                 {/* <div className="block lg:hidden">
@@ -21,12 +25,26 @@ export default function MainNav() {
                         <Link to="/" className="block mt-4 lg:inline-block lg:mt-0 text-blue-800 hover:text-white mr-4">
                             Home..
                         </Link>
-                        
+                        <Link to="/subway" className="block mt-4 lg:inline-block lg:mt-0 text-blue-800 hover:text-white mr-4">
+                            Subway Information
+                        </Link>
                     </div>
                     <div>
+                        
                         <Link to="/login" className="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-400 border-blue-400 hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0">
-                            Login
+                        {isLogin?'Logout':'Login'}
                         </Link>
+                        
+                        {/* {isLogin==false?
+                        <Link to="/login" className="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-400 border-blue-400 hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0">
+                        Login
+                        </Link>
+                        :
+                        <button className="inline-block text-sm px-4 py-2 leading-none border rounded text-blue-400 border-blue-400 hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0"
+                                onClick={handleLogout}>
+                        Logout
+                        </button>
+                        } */}
                     </div>
                 </div>
                 

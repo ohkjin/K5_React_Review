@@ -8,7 +8,7 @@ export default function LoginForm({onLogin}) {
     const handleSignIn=(e)=>{
         e.preventDefault();
         if(mailRef.current.value==='') {
-            alert('Please input email');
+            alert('Please input id');
             mailRef.current.focus();
             return;
         }
@@ -18,15 +18,15 @@ export default function LoginForm({onLogin}) {
             return;
         }
 
-        if(mailRef.current.value !== 'dustofjade@gmail.com') {
-            alert('Wrong email or password');
+        if(mailRef.current.value !== 'user') {
+            alert('Wrong ID');
             mailRef.current.focus();
             return;
         }
 
-        if(passRef.current.value!=='qwer') {
-            alert('Wrong email or password');
-            mailRef.current.focus();
+        if(passRef.current.value!=='pass') {
+            alert('Wrong password');
+            passRef.current.focus();
             return;
         }
 
@@ -60,7 +60,7 @@ export default function LoginForm({onLogin}) {
                     ref = {mailRef}
                     className="text-sm w-full px-4 py-2 border border-solid border-gray-300 rounded"
                     type="text"
-                    placeholder="Email Address"
+                    placeholder="ID"
                 />
                 <input
                     ref = {passRef}
